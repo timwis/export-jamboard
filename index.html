@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Export Jamboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  </head>
+  <body>
+    <h1>Export Jamboard</h1>
+    
+    <p>Bookmarklet to copy the contents of a jamboard as text</p>
+    
+    <p>Drag this link to your bookmarks toolbar:</p>
+    
+    <a id="bookmarklet" href="javascript:(function()%7Bfunction%20copyText(text)%20%7B%0A%20%20var%20node%20%3D%20document.createElement('textarea')%0A%20%20var%20selection%20%3D%20document.getSelection()%0A%0A%20%20node.textContent%20%3D%20text%0A%20%20document.body.appendChild(node)%0A%0A%20%20selection.removeAllRanges()%0A%20%20node.select()%0A%20%20document.execCommand('copy')%0A%0A%20%20selection.removeAllRanges()%0A%20%20document.body.removeChild(node)%0A%7D%0Aconst%20values%20%3D%20Array.from(document.querySelectorAll('%23jam-content%20.jam-postit-element')).map(el%20%3D%3E%20el.dataset.value)%0AcopyText(values.join(%22%5Cn%22))%7D)()%3B">Export Jamboard</a>
+  </body>
+</html>
