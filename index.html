@@ -20,7 +20,7 @@
         <a role="button" href="javascript:(function()%7Bfunction%20copyText(text)%20%7B%0A%20%20var%20node%20%3D%20document.createElement('textarea')%0A%20%20var%20selection%20%3D%20document.getSelection()%0A%0A%20%20node.textContent%20%3D%20text%0A%20%20document.body.appendChild(node)%0A%0A%20%20selection.removeAllRanges()%0A%20%20node.select()%0A%20%20document.execCommand('copy')%0A%0A%20%20selection.removeAllRanges()%0A%20%20document.body.removeChild(node)%0A%7D%0Aconst%20values%20%3D%20Array.from(document.querySelectorAll('%23jam-content%20.jam-postit-element')).map(el%20%3D%3E%20el.dataset.value)%0AcopyText(values.join(%22%5Cn%22))%7D)()%3B">Export Jamboard</a>
       </p>
         
-      <p>Then open the Jamboard you want to export and click it.</p>
+      <p>Then open the Jamboard you want to export and click it. The contents will be copied to your clipboard, so you can paste them into a document.</p>
     </main>
   </body>
 </html>
